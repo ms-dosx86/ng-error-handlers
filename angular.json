@@ -97,6 +97,39 @@
           }
         }
       }
+    },
+    "ng-error-handlers": {
+      "projectType": "library",
+      "root": "projects/ng-error-handlers",
+      "sourceRoot": "projects/ng-error-handlers/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-error-handlers/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-error-handlers/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-error-handlers/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ng-error-handlers/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

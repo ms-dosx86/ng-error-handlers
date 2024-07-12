@@ -10,6 +10,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ng-error-handlers": [
+        "./dist/ng-error-handlers"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
