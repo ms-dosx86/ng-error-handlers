@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-error-handlers": {
+    "ng-error-handlers-local": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ng-error-handlers",
+            "outputPath": "dist/ng-error-handlers-local",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-error-handlers:build:production"
+              "buildTarget": "ng-error-handlers-local:build:production"
             },
             "development": {
-              "buildTarget": "ng-error-handlers:build:development"
+              "buildTarget": "ng-error-handlers-local:build:development"
             }
           },
           "defaultConfiguration": "development"
