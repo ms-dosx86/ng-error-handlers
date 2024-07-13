@@ -1,14 +1,14 @@
 {
-  "name": "ng-error-handlers",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/core": "^17.0.0 || ^18.0.0"
-  },
-  "repository": {
-    "url": "https://github.com/ms-dosx86/ng-error-handlers.git"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "sideEffects": false
+    "name": "ng-error-handlers",
+    "version": "1.0.2",
+    "peerDependencies": {
+        "@angular/core": "^17.0.0 || ^18.0.0"
+    },
+    "repository": {
+        "url": "https://github.com/ms-dosx86/ng-error-handlers.git"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "sideEffects": false
 }

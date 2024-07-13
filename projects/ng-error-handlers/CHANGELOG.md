@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.1...v1.0.2) (2024-07-13)
+
+
+### Bug Fixes
+
+* sync package.json versions ([168264f](https://github.com/ms-dosx86/ng-error-handlers/commit/168264fdbb250b690f78fe6fb2f142e0a74a0038))
+* update param name ([55e2c06](https://github.com/ms-dosx86/ng-error-handlers/commit/55e2c06d894344789bad5d159bfacee076fb861a))
+
 ## [1.0.1](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.0...v1.0.1) (2024-07-13)
 
 
