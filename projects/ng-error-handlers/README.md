@@ -1,24 +1,166 @@
-# NgErrorHandlers
+# ng-error-handlers
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+Angular allows developers to have only one `ErrorHandler` at a time which sometimes may be suboptimal if you already have
+an error handler like `Sentry` and want to add additional error handling. In such cases you would have to extend the existing
+`ErrorHandler` and override `handleError`, add some error handling and call `super.handleError(error)`. This might be quite annoying
+especially wheh you want to use **multiple** error handlers alongside with existing ones. This library allows you to provide multiple
+error handlers (both `class` and `function` based) which will be executed one by one when an error occures.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ng-error-handlers` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-error-handlers`.
-> Note: Don't forget to add `--project ng-error-handlers` or else it will be added to the default project in your `angular.json` file. 
+```
+npm i ng-error-handlers
+```
 
-## Build
+## Angular version compatibility
 
-Run `ng build ng-error-handlers` to build the project. The build artifacts will be stored in the `dist/` directory.
+Compatible with v17 and v18
 
-## Publishing
+## Basic setup
 
-After building your library with `ng build ng-error-handlers`, go to the dist folder `cd dist/ng-error-handlers` and run `npm publish`.
+```ts
+import {provideErrorHandlers} from 'ng-error-handlers';
 
-## Running unit tests
+// Standalone projects
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideErrorHandlers(),
+    ]
+})
 
-Run `ng test ng-error-handlers` to execute the unit tests via [Karma](https://karma-runner.github.io).
+// Module based projects
+@NgModule({
+    providers: [
+        provideErrorHandlers(),
+    ]
+})
+export class AppModule {}
+```
 
-## Further help
+By default `provideErrorHandlers` doesn't provide any error handler. So if you want to have at least basic `ErrorHandler` you can provide it
+via `withClassHandlers`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Class based handlers
+
+A class must implement `ErrorHandler` interface from `@angular/core`.
+
+```ts
+import {provideErrorHandlers, withClassHandlers} from 'ng-error-handlers';
+import {ErrorHandler} from '@angular/core';
+
+class MyCustomHandler implements ErrorHandler {
+    handleError(error: any) {
+        // do some stuff
+    }
+}
+
+// Standalone projects
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideErrorHandlers(
+            withClassHandlers(ErrorHandler, MyCustomHandler)
+        ),
+    ]
+})
+
+// Module based projects
+@NgModule({
+    providers: [
+        provideErrorHandlers(
+            withClassHandlers(ErrorHandler, MyCustomHandler)
+        ),
+    ]
+})
+export class AppModule {}
+```
+
+## Function based handlers
+
+It is possible to just use a function to handle an error. A function must satisfy `ErrorHandlerFn` type from `ng-error-handlers`.
+
+```ts
+import {provideErrorHandlers, withFuncHandlers, ErrorHandlerFn} from 'ng-error-handlers';
+
+const customHandler: ErrorHandlerFn = (error: any) => {
+    // do some stuff
+}
+
+// Standalone projects
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideErrorHandlers(
+            withFuncHandlers(customHandler)
+        ),
+    ]
+})
+
+// Module based projects
+@NgModule({
+    providers: [
+        provideErrorHandlers(
+            withFuncHandlers(customHandler)
+        ),
+    ]
+})
+export class AppModule {}
+```
+
+## Usage with both class and function based handlers
+
+```ts
+import {provideErrorHandlers, withFuncHandlers, withClassHandlers, ErrorHandlerFn} from 'ng-error-handlers';
+import {ErrorHandler} from '@angular/core';
+
+class MyCustomHandler implements ErrorHandler {
+    handleError(error: any) {
+        // do some stuff
+    }
+}
+
+const customHandler: ErrorHandlerFn = (error: any) => {
+    // do some stuff
+}
+
+// Standalone projects
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideErrorHandlers(
+            withClassHandlers(ErrorHandler, MyCustomHandler),
+            withFuncHandlers(customHandler)
+        ),
+    ]
+})
+
+// Module based projects
+@NgModule({
+    providers: [
+        provideErrorHandlers(
+            withClassHandlers(ErrorHandler, MyCustomHandler),
+            withFuncHandlers(customHandler)
+        ),
+    ]
+})
+export class AppModule {}
+```
+
+## Injection context
+
+`provideErrorHandlers` returns `EnvironmentProviders` and thus must be provided either on application level or route level with the appropriate `EnvironmentInjector`. Hence it is possible to use `DI` in both `class` and `function` based error handlers.
+
+```ts
+import {ErrorHandler} from '@angular/core';
+import {ErrorHandlerFn} from 'ng-error-handlers';
+
+class MyCustomHandler implements ErrorHandler {
+    private readonly analyticsService = inject(AnalyticsService);
+
+    handleError(error: any) {
+        this.analyticsService.log(error);
+    }
+}
+
+const myCustomHandler: ErrorHandlerFn = (error: any) => {
+    const analyticsService = inject(AnalyticsService);
+    analyticsService.log(error);
+}
+```
