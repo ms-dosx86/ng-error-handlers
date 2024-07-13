@@ -22,7 +22,7 @@
         [
             "@semantic-release/exec",
             {
-              "prepareCmd": "node ./sync-versions.js --version=${nextRelease.version}"
+              "prepareCmd": "node ./sync-versions.js --v=${nextRelease.version} && npx prettier package.json --write"
             }
         ],
         [
