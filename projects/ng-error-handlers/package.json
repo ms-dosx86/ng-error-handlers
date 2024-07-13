@@ -4,6 +4,16 @@
     "peerDependencies": {
         "@angular/core": "^17.0.0 || ^18.0.0"
     },
+    "license": "MIT",
+    "keywords": [
+        "angular",
+        "errors",
+        "error",
+        "error handle",
+        "angular error handle",
+        "error-handlers",
+        "angular-error-handlers"
+    ],
     "repository": {
         "url": "https://github.com/ms-dosx86/ng-error-handlers.git"
     },
