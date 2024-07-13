@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.2...v1.0.3) (2024-07-13)
+
+
+### Bug Fixes
+
+* add missed license and keywords ([fe79cd6](https://github.com/ms-dosx86/ng-error-handlers/commit/fe79cd6e4d30a9f5d0886c9ecc96b951764d8c8d))
+
 ## [1.0.2](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.1...v1.0.2) (2024-07-13)
 
 

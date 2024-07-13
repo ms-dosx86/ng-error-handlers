@@ -1,6 +1,6 @@
 {
     "name": "ng-error-handlers",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "peerDependencies": {
         "@angular/core": "^17.0.0 || ^18.0.0"
     },
