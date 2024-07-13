@@ -1,4 +1,4 @@
-import { ErrorHandler, Provider } from "@angular/core";
+import { ErrorHandler } from "@angular/core";
 import { ERROR_HANDLERS } from "../constants/error-handlers";
 import { ErrorHandlersFeature } from "../models/error-handlers-feature";
 import { makeErrorHandlersFeature } from "./make-error-handlers-feature";
