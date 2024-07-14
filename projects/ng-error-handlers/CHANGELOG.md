@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.1.0...v1.1.1) (2024-07-14)
+
+
+### Bug Fixes
+
+* add @angular/common into peerDependencies ([6b3f806](https://github.com/ms-dosx86/ng-error-handlers/commit/6b3f806010cb2b543b9bda2ddc49ad06f9c851de))
+
 # [1.1.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.3...v1.1.0) (2024-07-14)
 
 
