@@ -12,7 +12,10 @@
     "skipLibCheck": true,
     "paths": {
       "ng-error-handlers": [
-        "./dist/ng-error-handlers"
+        "./projects/ng-error-handlers"
+      ],
+      "ng-error-handlers/*": [
+        "./projects/ng-error-handlers/*"
       ]
     },
     "esModuleInterop": true,
