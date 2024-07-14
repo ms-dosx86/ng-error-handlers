@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.3...v1.1.0) (2024-07-14)
+
+
+### Features
+
+* add dynamic import handler ([4c61f9f](https://github.com/ms-dosx86/ng-error-handlers/commit/4c61f9f46b3b8902a6c8300527ee9694d070d659))
+
 ## [1.0.3](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.0.2...v1.0.3) (2024-07-13)
 
 
