@@ -2,7 +2,8 @@
     "name": "ng-error-handlers",
     "version": "1.1.0",
     "peerDependencies": {
-        "@angular/core": "^17.0.0 || ^18.0.0"
+        "@angular/core": "^17.0.0 || ^18.0.0",
+        "@angular/common": "^17.0.0 || ^18.0.0"
     },
     "license": "MIT",
     "keywords": [
