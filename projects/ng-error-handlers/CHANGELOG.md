@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.2.0...v1.2.1) (2024-07-16)
+
+
+### Bug Fixes
+
+* **sentry-handler:** export sentry handler ([bb26be7](https://github.com/ms-dosx86/ng-error-handlers/commit/bb26be7925cd0421916cf037632b24fb1454813f))
+
 # [1.2.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.1.1...v1.2.0) (2024-07-16)
 
 
