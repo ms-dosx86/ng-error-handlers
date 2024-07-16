@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.1.1...v1.2.0) (2024-07-16)
+
+
+### Features
+
+* expose internal entities to allow custom features ([623c080](https://github.com/ms-dosx86/ng-error-handlers/commit/623c08030c6a624037e3eb301a051bac5d918781))
+* **sentry-helper:** add Sentry integration ([2bc127d](https://github.com/ms-dosx86/ng-error-handlers/commit/2bc127dc29f9582c21ccc8306459ebd038b0f45e))
+
 ## [1.1.1](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.1.0...v1.1.1) (2024-07-14)
 
 
