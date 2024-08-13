@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.2.1...v1.3.0) (2024-08-13)
+
+
+### Features
+
+* **dynamic-import-handler:** add "withDynamicImportHandler" to make things easier ([6c3f9a5](https://github.com/ms-dosx86/ng-error-handlers/commit/6c3f9a541f21a8428a5b4eb1e9ab332f89d7f4df))
+
 ## [1.2.1](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.2.0...v1.2.1) (2024-07-16)
 
 
