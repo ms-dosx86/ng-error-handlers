@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.3.0...v1.4.0) (2025-01-28)
+
+
+### Features
+
+* support Angular 17+ ([df05933](https://github.com/ms-dosx86/ng-error-handlers/commit/df059331d2b3a2c9dd6735d08cef6a7b44249cdd))
+* upgrade to Angular 19 ([f7bbc55](https://github.com/ms-dosx86/ng-error-handlers/commit/f7bbc550c257b395ce1111cfaafaf6e5685ae59d))
+
 # [1.3.0](https://github.com/ms-dosx86/ng-error-handlers/compare/v1.2.1...v1.3.0) (2024-08-13)
 
 
