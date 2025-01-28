@@ -14,7 +14,7 @@ npm i ng-error-handlers
 
 ## Angular version compatibility
 
-Compatible with v17 and v18
+Compatible with v17+
 
 ## Basic setup
 
