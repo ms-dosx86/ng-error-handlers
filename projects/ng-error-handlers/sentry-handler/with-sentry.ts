@@ -10,7 +10,7 @@ import {
     init,
     ErrorHandlerOptions,
 } from "@sentry/angular";
-import { APP_INITIALIZER } from "@angular/core";
+import { provideAppInitializer } from "@angular/core";
 
 /**
  * Allows to provide `Sentry` as a `class` based error handler.
@@ -32,13 +32,9 @@ export function withSentry(
             useClass: SentryErrorHandler,
             multi: true,
         },
-        {
-            provide: APP_INITIALIZER,
-            useFactory: () => () => {
-                init(options);
-            },
-            multi: true,
-        },
+        provideAppInitializer(() => {
+            init(options);
+        }),
         {
             provide: "errorHandlerOptions",
             useValue: errorHandlerOptions,

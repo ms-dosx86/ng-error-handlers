@@ -1,4 +1,5 @@
 import {
+    EnvironmentProviders,
     ErrorHandler,
     makeEnvironmentProviders,
     Provider,
@@ -20,7 +21,7 @@ import { ErrorHandlersFeatureKind } from "../models/error-handlers-feature-kind"
 export function provideErrorHandlers(
     ...features: ErrorHandlersFeature<ErrorHandlersFeatureKind>[]
 ) {
-    const providers: Provider[] = [
+    const providers: (EnvironmentProviders | Provider)[] = [
         {
             provide: ErrorHandler,
             useClass: ErrorHandlersManager,
